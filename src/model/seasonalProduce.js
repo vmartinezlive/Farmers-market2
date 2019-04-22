@@ -224,9 +224,9 @@ const availableProduce = [
       'Mushrooms',
       'Onions',
       'Peas',
-      'Peppers'
+      'Peppers',
       'Potatoes',
-      'Pumpkins'
+      'Pumpkins',
       'Radishes',
       'Squash',
       'Turnips'
