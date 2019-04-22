@@ -1,7 +1,8 @@
 import React from 'react';
-import NewLocationForm from "./NewLocationForm";
+import vendor from '../assets/images/lady.jpg';
+import PropTypes from 'prop-types';
 
-function ConfirmationQuestions(){
+function ConfirmationQuestions(props){
 
   return(
     <div>
@@ -16,12 +17,17 @@ function ConfirmationQuestions(){
         }
         `}</style>
       <h2>Are you sure you want to add a new location?</h2>
-      <button  onClick={NewLocationForm}>Yes </button>
+      <button onClick={props.onFormSubmission}>Yes</button>
       <br/>
       <br/>
-      <NewLocationForm/>
+      <img src={vendor}/>
+
     </div>
   );
 }
+
+ConfirmationQuestions.propTypes = {
+  onFormSubmission: PropTypes.func
+};
 
 export default ConfirmationQuestions;

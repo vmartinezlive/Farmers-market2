@@ -1,42 +1,42 @@
 import React from 'react';
 import ConfirmationQuestions from './ConfirmationQuestions';
 import NewLocationForm from './NewLocationForm';
+import PropTypes from 'prop-types';
 
 class NewLocationControl extends React.Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       formVisibleOnPage: false,
-      exampleDay: " ",
-      exampleLocation: " ",
-      exampleHours: " "
+      exampleDay: ' ',
+      exampleLocation: ' ',
+      exampleHours: ' '
 
     };
-    // this.handleClick = this.handleClick.bind(this);
+    this.handleFormSubmission = this.handleFormSubmission.bind(this);
 
 
   }
 
-  // handleClick(){
-  //   this.setState({formVisibleOnPage: true});
-  //   console.log('formVisibleOnPage is currently set to:' + this.state.formVisibleOnPage);
+  handleFormSubmission(){
+    this.setState({formVisibleOnPage: true});
+  }
 
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
       currentlyVisibleContent = <NewLocationForm />;
     } else {
-      currentlyVisibleContent = <ConfirmationQuestions />;
+      currentlyVisibleContent = <ConfirmationQuestions onFormSubmission={this.handleFormSubmission}/>;
     }
-      return(
-        <div>
-          {currentlyVisibleContent}
-        </div>
-      );
-    }
+    return(
+      <div>
+        {currentlyVisibleContent}
+      </div>
+    );
   }
+}
 
 
 

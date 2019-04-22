@@ -9,10 +9,10 @@ function Footer(){
   const whiteTest = {
     color: 'white',
     border: '1px solid blue'
-  }
+  };
   return (
     <div>
-    <style jsx>{`
+      <style jsx>{`
         .links {
           display: flex;
           flex-direction: row;
@@ -39,7 +39,7 @@ function Footer(){
         <Links/>
         <Link to="/newlocationcontrol"><h2>NLC</h2></Link>
         <h3><Icon/></h3>
-        </div>
+      </div>
 
     </div>
   );

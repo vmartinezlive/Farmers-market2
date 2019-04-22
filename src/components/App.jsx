@@ -8,6 +8,7 @@ import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 import DisplayProduce from './DisplayProduce';
 import NewLocationControl from './NewLocationControl';
 import { Switch, Route } from 'react-router-dom';
+import Error404 from './Error404';
 
 library.add(faStroopwafel);
 // import Body from './Body';
@@ -36,6 +37,7 @@ function App(){
         <Route exact path ='/' component={Body} />
         <Route exact path ='/displayproduce' component={DisplayProduce} />
         <Route exact path = '/newlocationcontrol' component={NewLocationControl}/>
+        <Route component={Error404}/>
       </Switch>
       <Footer/>
     </div>
