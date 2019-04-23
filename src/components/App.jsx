@@ -20,29 +20,44 @@ library.add(faStroopwafel);
 
 // import Error404 from './Error404';
 
-function App(){
-  return (
-    <div>
+class App extends React.Component{
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      marketSchedule: [],
+    };
+    this.handleAddingNewLocationForm = this.handleAddingNewLocationForm.bind(this);
+
+  }
+  handleAddingNewLocationForm(newLocation){
+    let newMarketSchedule = this.state.MarketSchedule.slice();
+    newMarketSchedule.push(newLocation);
+    this.setState({marketSchedule: newMarketSchedule});
+  }
+  render(){
+    return (
+      <div>
       <style jsx global>{`
-          body {
-            background-color: black;
-            margin: 0;
-            padding: 0;
-            color: #FFF;
-          }
+        body {
+          background-color: black;
+          margin: 0;
+          padding: 0;
+          color: #FFF;
+        }
         `}</style>
-      <Header/>
+        <Header/>
 
-      <Switch>
-        <Route exact path ='/' component={Body} />
-        <Route exact path ='/displayproduce' component={DisplayProduce} />
-        <Route exact path = '/newlocationcontrol' component={NewLocationControl}/>
-        <Route component={Error404}/>
-      </Switch>
-      <Footer/>
-    </div>
-  );
+        <Switch>
+          <Route exact path ='/' render={() =><DisplaySchedule displaySchedule={this.state.marketSchedule} />} />
+          <Route exact path ='/displayproduce' component={DisplayProduce} />
+          <Route exact path = '/newlocationform'render={() =><NewLocationControl on NewLocationCreation={this.handledAddingNewLocationForm}/>} />
+          <Route component={Error404}/>
+        </Switch>
+        <Footer/>
+        </div>
+    );
+  }
 }
-
 
 export default App;

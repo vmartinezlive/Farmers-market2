@@ -1,7 +1,20 @@
 import React from 'react';
 import veggies from '../assets/images/veggies.jpg';
+import PropTypes from 'prop-types';
 
-function NewTicketForm(){
+function NewTicketForm(props){
+  let _nuLocation = null;
+  let _nuDay = null;
+  let _nuHours = null;
+
+  function handleNewFormSubmission(event){
+    event.preventDefault();
+    props.onNewLocationCreation({location: _nuLocation.value, day: _nuDay.value, hours: _nuHours.value});
+    _nuLocation.value = ' ';
+    _nuDay.value = ' ';
+    _nuHours.value = ' ';
+  }
+
 
   return(
     <div>
@@ -32,25 +45,29 @@ function NewTicketForm(){
 
       }
       `}</style>
-
-      <div className="parent">
-        <div className="form">
-          <h3>New Location:</h3>
-          <input type="text" id="NuLocation" ></input>
-          <h3>New Day:</h3>
-          <input type="text" id="NuDay" ></input>
-          <h3>New Hours:</h3>
-          <input type="text" id="NuHours" ></input>
-          <br/>
-          <br/>
-          <button type="submit" id="submit">Button</button>
+      <form onSubmit={handleNewFormSubmission}>
+        <div className="parent">
+          <div className="form">
+            <h3>New Location:</h3>
+            <input type="text" id="nuLocation" ref={(input) => { _nuLocation = input;}}/>
+            <h3>New Day:</h3>
+            <input type="text" id="nuDay" ref={(input) => { _nuDay = input;}}/>
+            <h3>New Hours:</h3>
+            <input type="text" id="nuHours" ref={(input) => { _nuHours = input;}}/>
+            <br/>
+            <br/>
+            <button type="submit" id="submit">Button</button>
+          </div>
+          <div >
+            <img className="img" src={veggies}/>
+          </div>
         </div>
-        <div >
-          <img className="img" src={veggies}/>
-        </div>
-      </div>
+      </form>
     </div>
   );
 }
+NewLocationForm.propTypes = {
+  onNewLocationCreation: PropTypes.func
+};
 
 export default NewTicketForm;

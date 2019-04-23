@@ -1,8 +1,10 @@
 import React from 'react';
 import Schedule from './Schedule';
 import MarketSchedule from '../model/LocationData.js';
+import PropTypes from 'prop-types';
 
-function DisplaySchedule(){
+
+function DisplaySchedule(props){
   return (
     <div>
       <style jsx>{`
@@ -17,7 +19,7 @@ function DisplaySchedule(){
       `}
 
       </style>
-      {MarketSchedule.map((schedule, index) =>
+      {props.marketSchedule.map((schedule, index) =>
         <Schedule day={schedule.day}
           location={schedule.location}
           hours={schedule.hours}
@@ -27,5 +29,9 @@ function DisplaySchedule(){
     </div>
   );
 }
+
+MarketSchedule.propTypes = {
+  marketSchedule: PropTypes.array
+};
 
 export default DisplaySchedule;
