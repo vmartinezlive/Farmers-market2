@@ -17,6 +17,7 @@ function NewTicketForm(props){
     _nuLocation.value = ' ';
     _nuDay.value = ' ';
     _nuHours.value = ' ';
+    location.hash = '/';
   }
 
 
