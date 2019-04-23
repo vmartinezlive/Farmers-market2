@@ -7,11 +7,9 @@ class NewLocationControl extends React.Component {
 
   constructor(props) {
     super(props);
+    console.log(props);
     this.state = {
       formVisibleOnPage: false,
-      exampleDay: ' ',
-      exampleLocation: ' ',
-      exampleHours: ' '
 
     };
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
@@ -26,7 +24,7 @@ class NewLocationControl extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewLocationForm onNewLocationCreation={this.props.onNewLocationCreation} />;
+      currentlyVisibleContent = <NewLocationForm onNewLocationCreation={this.props.onAddingNewLocationForm} />;
     } else {
       currentlyVisibleContent = <ConfirmationQuestions onFormSubmission={this.handleFormSubmission}/>;
     }
@@ -39,7 +37,7 @@ class NewLocationControl extends React.Component {
 }
 
 NewLocationControl.propTypes = {
-  onNewLocationCreation: ProTypes.func
+  onNewLocationCreation: PropTypes.func
 };
 
 

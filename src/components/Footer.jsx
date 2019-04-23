@@ -37,7 +37,7 @@ function Footer(){
 
       <div className="links">
         <Links/>
-        <Link to="/newlocationcontrol"><h2>NLC</h2></Link>
+        <Link to="/newlocation"><h2>NLC</h2></Link>
         <h3><Icon/></h3>
       </div>
 

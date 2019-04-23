@@ -2,7 +2,7 @@ import React from 'react';
 import DisplaySchedule from './DisplaySchedule';
 import Img from './Img';
 
-function Body(){
+function Body(props){
   return (
     <div>
       <style jsx>{`
@@ -18,7 +18,7 @@ function Body(){
       </style>
 
       <Img/>
-      <DisplaySchedule/>
+      <DisplaySchedule marketSchedule={props.marketSchedule}/>
     </div>
   );
 }

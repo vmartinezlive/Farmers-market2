@@ -1,6 +1,7 @@
 import React from 'react';
 import veggies from '../assets/images/veggies.jpg';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+// import PropTypes from 'prop-types';
 
 function NewTicketForm(props){
   let _nuLocation = null;
@@ -9,6 +10,7 @@ function NewTicketForm(props){
 
   function handleNewFormSubmission(event){
     event.preventDefault();
+
     props.onNewLocationCreation({location: _nuLocation.value, day: _nuDay.value, hours: _nuHours.value});
     _nuLocation.value = ' ';
     _nuDay.value = ' ';
@@ -45,7 +47,7 @@ function NewTicketForm(props){
 
       }
       `}</style>
-      <form onSubmit={handleNewFormSubmission}>
+    <form onSubmit={handleNewFormSubmission}>
         <div className="parent">
           <div className="form">
             <h3>New Location:</h3>
@@ -56,7 +58,7 @@ function NewTicketForm(props){
             <input type="text" id="nuHours" ref={(input) => { _nuHours = input;}}/>
             <br/>
             <br/>
-            <button type="submit" id="submit">Button</button>
+            <button type="submit" id="submit">Submit</button>
           </div>
           <div >
             <img className="img" src={veggies}/>
@@ -66,8 +68,8 @@ function NewTicketForm(props){
     </div>
   );
 }
-NewLocationForm.propTypes = {
-  onNewLocationCreation: PropTypes.func
-};
+// NewLocationForm.propTypes = {
+//   onNewLocationCreation: PropTypes.func
+// };
 
 export default NewTicketForm;

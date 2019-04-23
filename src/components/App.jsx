@@ -6,6 +6,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
 import DisplayProduce from './DisplayProduce';
+import DisplaySchedule from './DisplaySchedule';
 import NewLocationControl from './NewLocationControl';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
@@ -25,13 +26,29 @@ class App extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
-      marketSchedule: [],
+      marketSchedule: [
+        {
+          day: 'Sunday',
+          location: 'Lents International',
+          hours: '9:00am - 2:00pm',
+        },
+        {
+          day: 'Monday',
+          location: 'Pioneer Courthouse Square',
+          hours: '10:00am - 2:00pm',
+        },
+        {
+          day: 'Tuesday',
+          location: 'Hillsboro',
+          hours: '5:00pm - 8:30pm',
+        }
+      ]
     };
     this.handleAddingNewLocationForm = this.handleAddingNewLocationForm.bind(this);
 
   }
   handleAddingNewLocationForm(newLocation){
-    let newMarketSchedule = this.state.MarketSchedule.slice();
+    let newMarketSchedule = this.state.marketSchedule.slice();
     newMarketSchedule.push(newLocation);
     this.setState({marketSchedule: newMarketSchedule});
   }
@@ -49,9 +66,10 @@ class App extends React.Component{
         <Header/>
 
         <Switch>
-          <Route exact path ='/' render={() =><DisplaySchedule displaySchedule={this.state.marketSchedule} />} />
+          <Route exact path ='/' render={()=><Body marketSchedule={this.state.marketSchedule}/>}/>
           <Route exact path ='/displayproduce' component={DisplayProduce} />
-          <Route exact path = '/newlocationform'render={() =><NewLocationControl on NewLocationCreation={this.handledAddingNewLocationForm}/>} />
+          // <Route exact path = '/newlocationform'render={() =><NewLocationControl on NewLocationCreation={this.handledAddingNewLocationForm}/>} />
+          <Route path = '/newlocation' render={()=><NewLocationControl onAddingNewLocationForm={this.handleAddingNewLocationForm} />}/>
           <Route component={Error404}/>
         </Switch>
         <Footer/>
