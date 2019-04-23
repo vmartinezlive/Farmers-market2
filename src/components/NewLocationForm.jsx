@@ -1,6 +1,7 @@
 import React from 'react';
 import veggies from '../assets/images/veggies.jpg';
 import { Link } from 'react-router-dom';
+import { v4 } from 'uuid';
 // import PropTypes from 'prop-types';
 
 function NewTicketForm(props){
@@ -11,7 +12,7 @@ function NewTicketForm(props){
   function handleNewFormSubmission(event){
     event.preventDefault();
 
-    props.onNewLocationCreation({location: _nuLocation.value, day: _nuDay.value, hours: _nuHours.value});
+    props.onNewLocationCreation({location: _nuLocation.value, day: _nuDay.value, hours: _nuHours.value, id: v4()});
     _nuLocation.value = ' ';
     _nuDay.value = ' ';
     _nuHours.value = ' ';

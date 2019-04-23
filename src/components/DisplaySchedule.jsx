@@ -4,6 +4,7 @@ import MarketSchedule from '../model/LocationData.js';
 import PropTypes from 'prop-types';
 
 
+
 function DisplaySchedule(props){
   return (
     <div>
@@ -19,12 +20,13 @@ function DisplaySchedule(props){
       `}
 
       </style>
-      {props.marketSchedule.map((schedule, index) =>
+      {props.marketSchedule.map((schedule) =>
         <Schedule day={schedule.day}
           location={schedule.location}
           hours={schedule.hours}
           booth={schedule.booth}
-          key={index}/>
+          id={schedule.id}
+          key={schedule.id}/>
       )}
     </div>
   );

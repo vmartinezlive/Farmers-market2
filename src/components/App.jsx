@@ -31,16 +31,19 @@ class App extends React.Component{
           day: 'Sunday',
           location: 'Lents International',
           hours: '9:00am - 2:00pm',
+          id: 0
         },
         {
           day: 'Monday',
           location: 'Pioneer Courthouse Square',
           hours: '10:00am - 2:00pm',
+          id: 1
         },
         {
           day: 'Tuesday',
           location: 'Hillsboro',
           hours: '5:00pm - 8:30pm',
+          id: 2
         }
       ]
     };

@@ -19,6 +19,7 @@ function Schedule(props){
       <h3 style={locationStyles}>{props.day}</h3>
       <h4>{props.location}</h4>
       <p>{props.hours}</p>
+      <p>The ID is {props.id}</p>
     </div>
   );
 }
