@@ -18,13 +18,14 @@ function Footer(){
           flex-direction: row;
           color: white;
           align-items: center;
+          margin-top: 10px;
         }
         h2 {
           position: relative;
           color: white;
-          bottom: -15px;
+          bottom: -17px;
           font-family: 'Allerta', sans-serif;
-          font-size: 1rem;
+          font-size: .90rem;
         }
         h3 {
           padding-top: 20px;
@@ -37,7 +38,7 @@ function Footer(){
 
       <div className="links">
         <Links/>
-        <Link to="/newlocation"><h2>NLC</h2></Link>
+        <Link to="/newlocation"><h2>#Form</h2></Link>
         <h3><Icon/></h3>
       </div>
 

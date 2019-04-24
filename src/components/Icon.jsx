@@ -15,11 +15,12 @@ function Icon(){
 					i {
 						padding-right: 5px;
 						padding-left: 5px;
+            padding-top: 5px;
 					}
 
 			`}</style>
-      <i className="fab fa-facebook-f fa-3x"></i>
-      <i className="fab fa-instagram fa-3x"></i>
+    <i className="fab fa-facebook-f fa-2x"></i>
+      <i className="fab fa-instagram fa-2x"></i>
     </div>
   );
 }

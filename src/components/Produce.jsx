@@ -16,6 +16,7 @@ function Produce(props){
           // max-height:80vh;
           overflow:hidden;
           border: 1px dotted gold;
+          margin-bottom: 10px;
         }
         h3{
           text-align:center;
@@ -29,7 +30,6 @@ function Produce(props){
           flex-flow: row wrap;
           text-align:center;
           width: 100%;
-          // background-color: red;
           justify-content: center;
           margin: 10px 35px 0 0;
           border: none;

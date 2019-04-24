@@ -6,8 +6,11 @@ function Img(){
   return(
     <div>
       <style jsx> {`
+          // width: 100vw;
+          // height: 100vh;
+          display: block;
           width: 100vw;
-          height: auto;
+          height: 50vh;
 			`}
       </style>
       <img src={bridge} alt="bridge"></img>
