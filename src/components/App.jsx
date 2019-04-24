@@ -60,13 +60,25 @@ class App extends React.Component{
 
   render(){
     return (
-      <div>
+      <div className="content-wrap">
         <style jsx global>{`
         body {
+          position: relative;
+          min-height: 100vh;
           background-color: black;
           margin: 0;
           padding: 0;
           color: #FFF;
+        }
+        //footer stick to the bottom values//
+        .footer {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 3rem;            /* Footer height */
+        }
+        .content-wrap {
+          padding-bottom: 3rem;    /* Footer height */
         }
         `}</style>
         <Header/>
@@ -77,7 +89,9 @@ class App extends React.Component{
           <Route path = '/newlocation' render={()=><NewLocationControl onAddingNewLocationForm={this.handleAddingNewLocationForm} />}/>
           <Route component={Error404}/>
         </Switch>
-        <Footer/>
+        <div className="footer">
+          <Footer/>
+        </div>
       </div>
     );
   }

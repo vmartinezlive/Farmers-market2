@@ -15,6 +15,7 @@ function Footer(){
       <style jsx>{`
         .maindiv {
           width:100%;
+          margin-top: 50px;
         }
         .links {
           display: flex;

@@ -28,7 +28,6 @@ function Produce(props){
           max-width: 100vw;
           overflow:hidden;
           border: 1px dotted gold;
-          // margin-bottom: 10px;
         }
         h3{
           // text-align:center;
@@ -48,6 +47,7 @@ function Produce(props){
         }
         ul {
           text-align: left;
+
 
 
         }
