@@ -26,7 +26,7 @@ function DisplaySchedule(props){
           hours={schedule.hours}
           booth={schedule.booth}
           id={schedule.id}
-          timeOpen={schedule.timeOpen}
+          formattedWaitTime={schedule.formattedWaitTime}
           key={schedule.id}/>
       )}
     </div>

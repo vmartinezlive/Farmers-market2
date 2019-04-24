@@ -10,16 +10,9 @@ import DisplaySchedule from './DisplaySchedule';
 import NewLocationControl from './NewLocationControl';
 import { Switch, Route } from 'react-router-dom';
 import Error404 from './Error404';
+import Moment from 'moment';
 
 library.add(faStroopwafel);
-// import Body from './Body';
-// import Icon from './Icon';
-// import Nav from './Nav';
-// import Ticket from './Links';
-
-
-
-// import Error404 from './Error404';
 
 class App extends React.Component{
 
@@ -27,31 +20,6 @@ class App extends React.Component{
     super(props);
     this.state = {
       marketSchedule: [
-        // {
-        //   day: 'Sunday',
-        //   location: 'Lents International',
-        //   hours: '9:00am - 2:00pm',
-        // },
-        // {
-        //   day: 'Monday',
-        //   location: 'Pioneer Courthouse Square',
-        //   hours: '10:00am - 2:00pm',
-        // },
-        // {
-        //   day: 'Tuesday',
-        //   location: 'Hillsboro',
-        //   hours: '5:00pm - 8:30pm',
-        // },
-        // {
-        //   day: 'Wednesday',
-        //   location: 'Shemanski Park',
-        //   hours: '10:00am - 2:00pm',
-        // },
-        // {
-        //   day: 'Thursday',
-        //   location: 'Northwest Portland',
-        //   hours: '2:00pm - 6:00pm',
-        // }
       ]
     };
     this.handleAddingNewLocationForm = this.handleAddingNewLocationForm.bind(this);
@@ -62,6 +30,34 @@ class App extends React.Component{
     newMarketSchedule.push(newLocation);
     this.setState({marketSchedule: newMarketSchedule});
   }
+
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() =>
+      this.updateLocationElapsedWaitTime(),
+    5000
+    );
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+
+  updateLocationElapsedWaitTime() {
+    console.log('check');
+    let newMarketSchedule = this.state.marketSchedule.slice();
+    newMarketSchedule.forEach((location) =>
+    location.formattedWaitTime = (location.timeOpen).fromNow(true)
+  );
+    this.setState({marketSchedule: newMarketSchedule});
+  }
+
+    handleAddingNewLocationForm(newLocation){
+    var newMarketSchedule = this.state.marketSchedule.slice();
+    newMarketSchedule.formattedWaitTime = (newLocation.timeOpen).fromNow(true)
+    newMarketSchedule.push(newLocation);
+    this.setState({marketSchedule: newMarketSchedule});
+  }
+
   render(){
     return (
       <div>
@@ -78,7 +74,6 @@ class App extends React.Component{
         <Switch>
           <Route exact path ='/' render={()=><Body marketSchedule={this.state.marketSchedule}/>}/>
           <Route exact path ='/displayproduce' component={DisplayProduce} />
-          // <Route exact path = '/newlocationform'render={() =><NewLocationControl on NewLocationCreation={this.handledAddingNewLocationForm}/>} />
           <Route path = '/newlocation' render={()=><NewLocationControl onAddingNewLocationForm={this.handleAddingNewLocationForm} />}/>
           <Route component={Error404}/>
         </Switch>
