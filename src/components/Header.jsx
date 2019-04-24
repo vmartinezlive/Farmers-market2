@@ -1,11 +1,11 @@
 import React from 'react';
-import Links from './Links';
-import Icon from './Icon';
+import NavBar from './NavBar';
 
 
 
 function Header(){
   return (
+
     <div>
       <style jsx>{`
         h1{
@@ -40,8 +40,7 @@ function Header(){
           font-size: 2.2rem;
         }
      `}</style>
-      <Links/>
-      <Icon/>
+   <NavBar/>
       <div className="portland">
         <h1>Portland</h1>
         <div className="nightMarket">
