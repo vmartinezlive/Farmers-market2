@@ -1,11 +1,12 @@
 import React from 'react';
 import veggies from '../assets/images/veggies.jpg';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { v4 } from 'uuid';
-import { withRouter } from 'react-router-dom';
-// import PropTypes from 'prop-types';
+// import { withRouter } from 'react-router-dom';
+import Moment from 'moment';
+import PropTypes from 'prop-types';
 
-function NewTicketForm(props){
+function NewLocationForm(props){
   let _nuLocation = null;
   let _nuDay = null;
   let _nuHours = null;
@@ -13,7 +14,7 @@ function NewTicketForm(props){
   function handleNewFormSubmission(event){
     event.preventDefault();
 
-    props.onNewLocationCreation({location: _nuLocation.value, day: _nuDay.value, hours: _nuHours.value, id: v4()});
+    props.onNewLocationCreation({location: _nuLocation.value, day: _nuDay.value, hours: _nuHours.value, id: v4(), timeOpen: new Moment()});
     _nuLocation.value = ' ';
     _nuDay.value = ' ';
     _nuHours.value = ' ';
@@ -50,7 +51,7 @@ function NewTicketForm(props){
 
       }
       `}</style>
-    <form onSubmit={handleNewFormSubmission}>
+      <form onSubmit={handleNewFormSubmission}>
         <div className="parent">
           <div className="form">
             <h3>New Location:</h3>
@@ -71,8 +72,8 @@ function NewTicketForm(props){
     </div>
   );
 }
-// NewLocationForm.propTypes = {
-//   onNewLocationCreation: PropTypes.func
-// };
+NewLocationForm.propTypes = {
+  onNewLocationCreation: PropTypes.func
+};
 
-export default NewTicketForm;
+export default NewLocationForm;

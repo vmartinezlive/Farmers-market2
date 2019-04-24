@@ -29,6 +29,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "font-awesome": "^4.7.0",
     "i": "^0.3.6",
+    "moment": "^2.18.1",
     "npm": "^6.9.0",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",

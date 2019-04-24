@@ -26,6 +26,7 @@ function DisplaySchedule(props){
           hours={schedule.hours}
           booth={schedule.booth}
           id={schedule.id}
+          timeOpen={schedule.timeOpen}
           key={schedule.id}/>
       )}
     </div>

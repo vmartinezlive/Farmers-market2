@@ -19,7 +19,7 @@ function Icon(){
 					}
 
 			`}</style>
-    <i className="fab fa-facebook-f fa-2x"></i>
+      <i className="fab fa-facebook-f fa-2x"></i>
       <i className="fab fa-instagram fa-2x"></i>
     </div>
   );
