@@ -14,6 +14,7 @@ function Schedule(props){
           border: 1px dotted yellow;
           text-align: center;
           font-family: Allerta;
+          margin-bottom: 2px;
         }
 
       `}</style>

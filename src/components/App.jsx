@@ -63,8 +63,8 @@ class App extends React.Component{
       <div className="content-wrap">
         <style jsx global>{`
         body {
-          position: relative;
-          min-height: 100vh;
+          position: relative;photo1
+          min-height: 95vh;
           background-color: black;
           margin: 0;
           padding: 0;
@@ -75,10 +75,10 @@ class App extends React.Component{
           position: absolute;
           bottom: 0;
           width: 100%;
-          height: 3rem;            /* Footer height */
+          height: 2rem;            /* Footer height */
         }
         .content-wrap {
-          padding-bottom: 3rem;    /* Footer height */
+          padding-bottom: 2rem;    /* Footer height */
         }
         `}</style>
         <Header/>

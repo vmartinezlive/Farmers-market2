@@ -8,6 +8,7 @@ Dino Nguyen
 Issac Hall
 Nelia Terrazas
 Chris Breaux
+Gary Bermudez
 
 
 ## Description
@@ -33,7 +34,7 @@ Followed class exercise:
 ![](src/assets/images/current-site.png)
 
 ## Cloned Site
-![](src/assets/images/cloned-site.png)
+![](src/assets/images/photo1.png)
 
 ## Known Bugs
 
